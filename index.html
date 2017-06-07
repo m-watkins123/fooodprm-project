@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Foodprn</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Corben:700|Lato|Montserrat:900" rel="stylesheet">
+    <script type="text/javascript" src="foodprn.js"></script>
+</head>
+
+<body>
+    <!--navigation bar-->
+    <nav class="navbar navbar-default transparent navbar-static-top" role="navigation" id="navbar-main">
+        <div class="container">
+            <div class="navbar-header">
+                <h1 class="display-3">Foodp<img id="burgerImg" src="./assets/images/icon-burger-red.png">rn</h1>
+            </div>
+        </div>
+    </nav>
+    <!--end nav bar-->
+    <!--begin bg-carousel-->
+    <div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="slide1"></div>
+            </div>
+            <div class="item">
+                <div class="slide2"></div>
+            </div>
+            <div class="item">
+                <div class="slide3"></div>
+            </div>
+        </div>
+        <!-- .carousel-inner -->
+        <div class="container carousel-overlay text-center">
+            <h2>Feast your eyes</h2>
+            <!--<a class="btn btn-lg btn-success fp-buttons" href="#">
+            <span class="fa fa-dollar"></span> Get Pricing
+        </a>
+        <a class="btn btn-lg btn-success fp-buttons" href="#">
+            <span class="fa fa-check"></span> Sign Up
+        </a>
+    </div>
+</div><! .carousel -->
+            <!--end bg-carousel-->
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="text" id="city" placeholder="City">
+                <input class="form-control mr-sm-2" type="text" id="state" placeholder="State">
+                <button class="btn btn-md btn-danger my-2 my-sm-0" type="submit" id="submit-search">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="wellDivContainer">
+        <div class="restaurantUnit">
+            <div class='row'>
+                <div class='col-md-6'>
+                    <h4 class="restaurantName1"> Broa </h4>
+                </div>
+                <div class='col-md-6'>
+                    <a target="_blank" href="https://www.google.com/maps?daddr=40.718657,-74.043575" class="restaurantAddress1">297 Grove Street </a>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <p class="restaurantRating1"> Foursquare Rating: 9.2 </p>
+                </div>
+            </div>
+            <!-- start of images div carousel1 -->
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <div class="carousel slide media-carousel" id="carousel1">
+                        <div class="carousel-inner">
+                            <div class="item  active">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/76649826_lz5TFAfSUhyP8WWmA0pkrcAlb1NjSt3TJb5d0rvpgSs.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/42173_FQvlux5jyKl7m8pJcM9Jrn179uoICPMNW97arbSAWd4.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/367159_KQzfRfIloiYL_Pb6229XBj33Q-S1DXEFFazYaX6HlBY.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/29058702_FadpR0rtorGboSrd2awj99eZ4drCE7JZLxvgP3vu6ro.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/2296835_uORIKu-DDmmPBNDSd0-V7fw0iDq_VhoREoW4ORiytpo.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/940866_awiFbrJ3DUIjP8SdYAgB-sJl3UWohBBUac4tCsdGnhM.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/1225302_nPICtIErp4ijD0d5J1VCz9EI7mDX9m1d2H3FbAm-WtM.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/1225302_PcdD4ZVNthFGl0qQ_dlbEWy9gZqPzCCapOGPsL0QbrM.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a data-slide="prev" href="#carousel1" class="left carousel-control scroll" id="leftButton1"> ‹</a>
+                        <a data-slide="next" href="#carousel1" class="right carousel-control scroll" id="rightButton1">›</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of images div carousel1 -->
+        <!-- RESTAURANT 2 -->
+        <div class="restaurantUnit">
+            <div class='row'>
+                <div class='col-md-6'>
+                    <h4 class="restaurantName2"> Left Bank Burger Bar </h4>
+                </div>
+                <div class='col-md-6'>
+                    <a target="_blank" href="https://www.google.com/maps?daddr=40.72174601295284,-74.04622077941895" class="restaurantAddress1">194 Newark Avenue </a>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-4'>
+                    <p class="restaurantRating2"> Foursquare Rating: 9.1 </p>
+                </div>
+            </div>
+            <!-- start of images div carousel2 -->
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <div class="carousel slide media-carousel" id="carousel2">
+                        <div class="carousel-inner">
+                            <div class="item  active">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/2881221_GSxfDW8OMoCp3qi1Zv7S0LkuSOFknfFC5GmW7p1p1gs.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/4086289_W9-Eyw-Sc0DPYp5RfJUgXgt-JbiNzMApXGksxZkSgpQ.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/21960910_31IyOwI-2Q5uS94hCVPF6m3Gald9khdD44T5zYYiMIo.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/37560_cMd2sa93h7VHbpV_fcBDMdReSnjNlzTQYCAt6jzdaq4.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/10695368_I0v-qNJFWXEunFwOZUrbLDRxWu1V5NtKeh9JQhZNreg.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/3874572_9ANOyu5bQsWw9LqpPWAL2Sw-yjtLXKXpwoWPYgQXh_g.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/42987156_vWQaopCqhdv45wiBKzAAhTiXzLJu-TpryeQSv2WJWoY.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/37560_p2AilREEBbils8pXBfez_4ZdWGq7RP0MAv3HcNC03n0.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a data-slide="prev" href="#carousel2" class="left carousel-control scroll" id="leftButton2">‹</a>
+                        <a data-slide="next" href="#carousel2" class="right carousel-control scroll" id="leftButton2">›</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of images div carousel2 -->
+        <!-- RESTAURANT 3 -->
+        <div class="restaurantUnit">
+            <div class='row'>
+                <div class='col-md-4'>
+                    <h4 class="restaurantName3"> Porta </h4>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-4'>
+                    <p class="restaurantRating3"> Foursquare Rating: 8.8 </p>
+                </div>
+            </div>
+            <!-- start of images div carousel3 -->
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <div class="carousel slide media-carousel" id="carousel3">
+                        <div class="carousel-inner">
+                            <div class="item  active">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/1518856_IaPRNfiiNs8UQ-hXZoVt0UtgmUQuVjViRgr4bVoaNhI.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/117715_tV_2kuV7Oo-gfXgMGpiyNoEYdR46W2Lbqn6rG6UEny4.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/2802906_cu5embO-YhWmrsj7_waip10Dch2SdcJv38PFNIJLIsg.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/164570_ZLsxxuGPHS5kDYPm4TICRLEvvOlJ4yfPvfcc2J1GkOg.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/8418727_daGKnB2c5Q0loJaWOgFXng5WuQAoHz303m5vndtL59w.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/14936340_QEErODvZXdhGs7h5U4FsBd1f8stQfhYhl4aebo4X15Y.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/57607_CxvD4L1lgTg_3ziSwYF0vYPVVMiZtVDQg6N8WVU2rOg.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/38591665_prXkCxuS-oMFe9PTrmiUdmJQ9wb7Fu03Dc0o7eeAvz8.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a data-slide="prev" href="#carousel3" class="left carousel-control scroll" id="leftButton3">‹</a>
+                        <a data-slide="next" href="#carousel3" class="right carousel-control scroll" id="rightButton3">›</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of images div carousel4 -->
+        <!-- RESTAURANT 4 -->
+        <div class="restaurantUnit">
+            <div class='row'>
+                <div class='col-md-4'>
+                    <h4 class="restaurantName4"> Taqueria Mi Mariachi </h4>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-4'>
+                    <p class="restaurantRating4"> Foursquare Rating: 8.9 </p>
+                </div>
+            </div>
+            <!-- start of images div carousel4 -->
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <div class="carousel slide media-carousel" id="carousel4">
+                        <div class="carousel-inner">
+                            <div class="item  active">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/74768976_AcTaTHGxc-4EfY5YLnCLEkVFuN4PmmLzczXkF5Ciqcs.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/95286474_3DB_FHootzoyc5BN6tmToZnt8N-1F_ZszK-1co7Acbc.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/8766957_05IOZf5G7mxqJCuJfJtuq5q6h2M-XHg8hgIDZOrlcmM.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/12232879_sLvBVvMwz8jYLrtC0sFMMjjX4mpru1sVmMPDJdGDWio.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/7nAHhT47HXcKBGAuoqNloh4NFjT3MXpi4HDHysnktI4.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/2790748_avU_TJWTB6vxB6h7C17J8uQgEoEWbp4ySKMSHr1ajHg.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/2926990_cOtp1bZk_GMeLv-HbJ93HLHpCrVv9u5eeKCSXp2pKsM.jpg"></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="#"><img alt="" src="https://igx.4sqi.net/img/general/width960/233163_dlpn4XKkcYf_DixXk-2p3diJ9Rf23Nc6vCjmRlay6ZI.jpg"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a data-slide="prev" href="#carousel4" class="left carousel-control scroll" id="leftButton4">‹</a>
+                        <a data-slide="next" href="#carousel4" class="right carousel-control scroll" id="rightButton4">›</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of images div carousel4 -->
+    </div>
+    <!-- FOOTER -->
+    <!-- <footer class="container-fluid">
+  <p class="pull-right"><a href="#">Back to top</a></p>
+  <p>© 2017 Foodprn, Inc · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+</footer> -->
+</body>
+
+</html>
